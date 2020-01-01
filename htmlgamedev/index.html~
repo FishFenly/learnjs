@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Breakout Game</title>
+    <script src="https://code.createjs.com/1.0.0/createjs.min.js"></script>
+    <script src="app.js"></script>
+  </head>
+  <body onload="init();">
+    <h1>Breakout with <3 by joseph</h1>
+    <canvas id="myCanvas" width=~"500" height="500" style="border: 1px solid black;"></canvas>
+  </body>
+</html>

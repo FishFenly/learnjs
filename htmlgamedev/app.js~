@@ -1,0 +1,58 @@
+var stage;
+var paddle;
+var ball;
+const PADDLE_W = 100;
+const PADDLE_H = 20;
+const BRICK_W = 60;
+const BRICK_H = 30;
+      
+function init()
+{
+    stage = new createjs.Stage("myCanvas");
+    createjs.Ticker.setFPS(60);
+    createjs.Ticker.addEventListener("tick",stage);
+
+    drawBrick();
+    drawBall();
+    drawPaddle();
+}
+
+function drawBrick()
+{
+    var brick = new createjs.Shape();
+    brick.graphics.beginFill("#000FFF");
+    brick.graphics.drawRect(0,0,BRICK_W,BRICK_H);
+    brick.graphics.endFill();
+    stage.addChild(brick);
+}
+
+function drawBall()
+{
+    ball = new createjs.Shape();
+    ball.graphics.beginFill("Red").drawCircle(0,0,8);
+    ball.x = 100;
+    ball.y = 100;
+    stage.addChild(ball);
+}
+
+function drawPaddle()
+{
+    paddle = new createjs.Shape();
+    paddle.graphics.beginFill("#000000");
+    paddle.graphics.drawRect(0,0,PADDLE_W,PADDLE_H);
+    paddle.y = 200;
+    stage.addChild(paddle);
+}
+
+createjs.Sound.alternateExtentions = ["mp3"]
+
+/*
+function loadSound()
+{
+    createjs.Sound.registerSound("assets/hit.ogg","hit");
+}
+
+function playSound()
+{
+}
+*/
